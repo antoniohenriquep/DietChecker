@@ -12,11 +12,21 @@ export default function App() {
 
 function segurar()
 {
-  let i = carb
-  timer = setInterval(() =>{
+  var i = carb
+  console.log("Segurou")
+  console.log(timer)
+  
+  if(!timer)
+  {
+  timer = setInterval(() =>{ 
     i++
     setCarb(i)
   },250)
+  }else{
+    clearInterval(timer)
+    timer = null
+  }
+  console.log("Saiu")
 }
 
 function apertar()
@@ -26,13 +36,18 @@ function apertar()
 
 function soltar()
 {
+  isPressed = false
   clearInterval(timer)
-  timer = null
+  //timer = null
+
+  console.log('Soltou')
 }
+
+
  return (
     <View style={styles.areaSelectors}>
       <NumberSelector
-      //aperta = {() =>apertar()}
+      //aperta = {() =>segurar()}
       segura = {() =>segurar()}
       solta = {() =>soltar()}
       placeholder = {carb.toString()}/>

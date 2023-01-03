@@ -12,7 +12,7 @@ export default function NumberSelector(props) {
         {backgroundColor: pressed ? '#1c4966' : '#59bcff'},
         styles.button]}
     onLongPress = {props.segura}
-    onPress ={props.aperta}
+    //onPressIn ={props.aperta}
     onPressOut = {props.solta}>
 
         
