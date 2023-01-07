@@ -1,10 +1,16 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Button } from 'react-native';
+
 
 export default function Home() {
- return (
+
+  const navigation = useNavigation()
+
+  return (
    <View>
     <Text>Ola</Text>
+    <Button title='Navegar' onPress={() => navigation.navigate('Macros')}/>
    </View>
   );
 }
