@@ -24,17 +24,21 @@ export default function Macros() {
   return (
    <View>
     <Text>Ola Macros</Text>
-    <View>
+    <View style = {styles.slidersArea}>
+
+      <View style={styles.sliders}>
       <Text>Carboidratos: {carb}</Text>
       <VerticalSlider
-          value={1}
+          value={carb}
           disabled={false}
-          min={0}
+          min={5}
           max={100}
           onChange={(value) => {
+            setCarb(value)
             console.log("CHANGE", value);
           }}
           onComplete={(value) => {
+            
             console.log("COMPLETE", value);
           }}
           width={50}
@@ -43,35 +47,72 @@ export default function Macros() {
           borderRadius={5}
           minimumTrackTintColor={"gray"}
           maximumTrackTintColor={"tomato"}
-          showBallIndicator
-          ballIndicatorColor={"gray"}
-          ballIndicatorTextColor={"white"}
         />
+        </View>
+      <View style={styles.sliders}>
       <Text>Proteínas: {prot}</Text>
-      <Slider
-      value={prot} 
-      minimumValue={5} 
-      maximumValue ={90}
-      onValueChange ={(value) => {setProt(Math.floor(value))}}/>
+      <VerticalSlider
+          value={prot}
+          disabled={false}
+          min={5}
+          max={100}
+          onChange={(value) => {
+            setProt(value)
+            console.log("CHANGE", value);
+          }}
+          onComplete={(value) => {
+            
+            console.log("COMPLETE", value);
+          }}
+          width={50}
+          height={300}
+          step={1}
+          borderRadius={5}
+          minimumTrackTintColor={"gray"}
+          maximumTrackTintColor={"tomato"}
+        />
+      </View>
+      <View style={styles.sliders}>
       <Text>Gorduras: {lip}</Text>
-      <Slider
-      value={lip} 
-      minimumValue={5} 
-      maximumValue ={90}
-      onValueChange ={(value) => {setLip(Math.floor(value))}}/>
-
-      <Button
+      <VerticalSlider
+          value={lip}
+          disabled={false}
+          min={5}
+          max={100}
+          onChange={(value) => {
+            setLip(value)
+            console.log("CHANGE", value);
+          }}
+          onComplete={(value) => {
+            
+            console.log("COMPLETE", value);
+          }}
+          width={50}
+          height={300}
+          step={1}
+          borderRadius={5}
+          minimumTrackTintColor={"gray"}
+          maximumTrackTintColor={"tomato"}
+        />
+      </View>
+    </View>
+    <Button
       title='Concluir'
       onPress={() =>{
         verifyMacros()
       }}/>
-    </View>
    </View>
   );
 }
 
 const styles = StyleSheet.create({
     slidersArea:{
-      flexDirection:'row'
+      flexDirection:'row',
+      alignContent:'space-around',
+      justifyContent:'space-around'
+    },
+    sliders:{
+      justifyContent:'center',
+      alignItems:'center'
     }
 });
