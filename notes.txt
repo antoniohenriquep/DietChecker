@@ -1,0 +1,5 @@
+Na parte de editar a porcentagem de macros:
+- Slider vertical
+- Botão de confirmação no header
+- Mostrar a porcentagem somada dos sliders
+
